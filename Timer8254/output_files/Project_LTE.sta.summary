@@ -1,0 +1,173 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'KEY[0]'
+Slack : -2.788
+TNS   : -35.325
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -2.040
+TNS   : -32.548
+
+Type  : Slow 1200mV 85C Model Setup 'Dvide_Freq:Divide|lpm_counter:inst|cntr_3ef:auto_generated|counter_reg_bit[23]'
+Slack : -1.633
+TNS   : -18.932
+
+Type  : Slow 1200mV 85C Model Setup 'timer:timer1|gestionDialogue:GD|latch_d'
+Slack : -1.111
+TNS   : -15.374
+
+Type  : Slow 1200mV 85C Model Hold 'KEY[0]'
+Slack : 0.378
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.490
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'timer:timer1|gestionDialogue:GD|latch_d'
+Slack : 0.560
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Dvide_Freq:Divide|lpm_counter:inst|cntr_3ef:auto_generated|counter_reg_bit[23]'
+Slack : 0.646
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'KEY[0]'
+Slack : -0.303
+TNS   : -0.605
+
+Type  : Slow 1200mV 85C Model Removal 'KEY[0]'
+Slack : 0.937
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -3.000
+TNS   : -43.687
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -36.672
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Dvide_Freq:Divide|lpm_counter:inst|cntr_3ef:auto_generated|counter_reg_bit[23]'
+Slack : -1.403
+TNS   : -23.851
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'timer:timer1|gestionDialogue:GD|latch_d'
+Slack : 0.432
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'KEY[0]'
+Slack : -2.525
+TNS   : -30.569
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.728
+TNS   : -27.006
+
+Type  : Slow 1200mV 0C Model Setup 'Dvide_Freq:Divide|lpm_counter:inst|cntr_3ef:auto_generated|counter_reg_bit[23]'
+Slack : -1.376
+TNS   : -16.151
+
+Type  : Slow 1200mV 0C Model Setup 'timer:timer1|gestionDialogue:GD|latch_d'
+Slack : -0.934
+TNS   : -12.855
+
+Type  : Slow 1200mV 0C Model Hold 'KEY[0]'
+Slack : 0.338
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.437
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'timer:timer1|gestionDialogue:GD|latch_d'
+Slack : 0.497
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Dvide_Freq:Divide|lpm_counter:inst|cntr_3ef:auto_generated|counter_reg_bit[23]'
+Slack : 0.597
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'KEY[0]'
+Slack : -0.191
+TNS   : -0.382
+
+Type  : Slow 1200mV 0C Model Removal 'KEY[0]'
+Slack : 0.851
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -3.000
+TNS   : -43.687
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -36.672
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Dvide_Freq:Divide|lpm_counter:inst|cntr_3ef:auto_generated|counter_reg_bit[23]'
+Slack : -1.403
+TNS   : -23.851
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'timer:timer1|gestionDialogue:GD|latch_d'
+Slack : 0.475
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -0.650
+TNS   : -1.350
+
+Type  : Fast 1200mV 0C Model Setup 'KEY[0]'
+Slack : -0.616
+TNS   : -0.706
+
+Type  : Fast 1200mV 0C Model Setup 'Dvide_Freq:Divide|lpm_counter:inst|cntr_3ef:auto_generated|counter_reg_bit[23]'
+Slack : -0.463
+TNS   : -4.730
+
+Type  : Fast 1200mV 0C Model Setup 'timer:timer1|gestionDialogue:GD|latch_d'
+Slack : 0.053
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'KEY[0]'
+Slack : 0.165
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.176
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'timer:timer1|gestionDialogue:GD|latch_d'
+Slack : 0.250
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Dvide_Freq:Divide|lpm_counter:inst|cntr_3ef:auto_generated|counter_reg_bit[23]'
+Slack : 0.251
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'KEY[0]'
+Slack : 0.414
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'KEY[0]'
+Slack : 0.423
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -3.000
+TNS   : -39.385
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -27.818
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Dvide_Freq:Divide|lpm_counter:inst|cntr_3ef:auto_generated|counter_reg_bit[23]'
+Slack : -1.000
+TNS   : -17.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'timer:timer1|gestionDialogue:GD|latch_d'
+Slack : 0.386
+TNS   : 0.000
+
+------------------------------------------------------------

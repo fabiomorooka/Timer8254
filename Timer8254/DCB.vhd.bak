@@ -1,0 +1,59 @@
+
+
+
+-- declaration d'un transcodeur DCB
+
+
+entity DCB is
+	port (datai : IN bit_vector (3 downto 0);
+		segm : OUT bit_vector (0 to 6) );
+end DCB;
+
+architecture arch_DCB of DCB is
+
+	constant seg0 : bit_vector(0 to 6) := ('1','1','1','1','1','1','0') ;
+	constant seg1 : bit_vector(0 to 6) := ('0','1','1','0','0','0','0') ;
+	constant seg2 : bit_vector(0 to 6) := ('1','1','0','1','1','0','1') ;
+	constant seg3 : bit_vector(0 to 6) := ('1','1','1','1','0','0','1') ;
+	constant seg4 : bit_vector(0 to 6) := ('0','1','1','0','0','1','1') ;
+	constant seg5 : bit_vector(0 to 6) := ('1','0','1','1','0','1','1') ;
+	constant seg6 : bit_vector(0 to 6) := ('1','0','1','1','1','1','1') ;
+	constant seg7 : bit_vector(0 to 6) := ('1','1','1','0','0','0','0') ;
+	constant seg8 : bit_vector(0 to 6) := ('1','1','1','1','1','1','1') ;
+	constant seg9 : bit_vector(0 to 6) := ('1','1','1','0','0','1','1') ;
+	constant seg10 : bit_vector(0 to 6) := ('1','1','1','0','1','1','1') ;
+	constant seg11 : bit_vector(0 to 6) := ('0','0','1','1','1','1','1') ;
+	constant seg12 : bit_vector(0 to 6) := ('1','0','0','1','1','1','0') ;
+	constant seg13 : bit_vector(0 to 6) := ('0','1','1','1','1','0','1') ;
+	constant seg14 : bit_vector(0 to 6) := ('1','0','0','1','1','1','1') ;
+	constant seg15 : bit_vector(0 to 6) := ('1','0','0','0','1','1','1') ;
+	
+	signal sortie : bit_vector(0 to 6):= seg1;
+
+begin 
+
+	with datai select
+		sortie <= seg1 when ('0','0','0','1'),
+				seg2 when ('0','0','1','0'),
+				seg3 when ('0','0','1','1'),
+				seg4 when ('0','1','0','0'),
+				seg5 when ('0','1','0','1'),
+				seg6 when ('0','1','1','0'),
+				seg7 when ('0','1','1','1'),
+				seg8 when ('1','0','0','0'),                            
+				seg9 when ('1','0','0','1'),
+				seg10 when ('1','0','1','0'),
+				seg11 when ('1','0','1','1'),
+				seg12 when ('1','1','0','0'),
+				seg13 when ('1','1','0','1'),			
+				seg14 when ('1','1','1','0'),
+				seg15 when ('1','1','1','1'),
+				seg0 when others;
+				
+segm  <= sortie XOR ('1','1','1','1','1','1','1');
+	
+--	segm  <= sortie ;
+
+
+end arch_DCB;
+

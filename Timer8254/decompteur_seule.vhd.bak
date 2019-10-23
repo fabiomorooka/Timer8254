@@ -1,0 +1,28 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+ENTITY decompteur_seule IS
+PORT(	charg_d : IN std_logic; 						-- Demande de chargement
+	d_buf_in : IN std_logic_vector(15 DOWNTO 0); 				-- Valeur de chargement
+    	gate : IN std_logic;							-- Decompte ou faire rien	
+    	clk : IN std_logic;							-- Signal clock
+    	count_val : BUFFER std_logic_vector(15 DOWNTO 0) := "0000000000000110");-- Valeur de la sortie
+END decompteur_seule;
+
+ARCHITECTURE behaviour OF decompteur_seule IS
+	BEGIN
+	PROCESS(clk)
+       	BEGIN
+		IF rising_edge(clk) THEN
+			-- Cas demande de chargement
+			IF charg_d = '1' THEN
+				count_val <= d_buf_in;
+			ELSE
+				IF gate = '1' THEN -- Cas decompter
+					count_val <= count_val - 1;
+				END IF;
+     			END IF;	
+		END IF;
+	END PROCESS;
+ END behaviour;

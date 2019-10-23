@@ -1,0 +1,576 @@
+Analysis & Synthesis report for Project_LTE
+Sun May 12 15:02:31 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |top_DE10|timer:timer1|gestionDialogue:GD|RW_op
+  9. State Machine - |top_DE10|timer:timer1|gestionDialogue:GD|D_RW
+ 10. User-Specified and Inferred Latches
+ 11. Logic Cells Representing Combinational Loops
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: Dvide_Freq:Divide|LPM_COUNTER:inst
+ 16. Port Connectivity Checks: "timer:timer1"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun May 12 15:02:31 2019       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; Project_LTE                                 ;
+; Top-level Entity Name              ; top_DE10                                    ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 152                                         ;
+;     Total combinational functions  ; 152                                         ;
+;     Dedicated logic registers      ; 70                                          ;
+; Total registers                    ; 70                                          ;
+; Total pins                         ; 65                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; top_DE10           ; Project_LTE        ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                    ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                          ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------+---------+
+; top_DE10.vhd                     ; yes             ; User VHDL File                     ; C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/top_DE10.vhd                ;         ;
+; timer.vhd                        ; yes             ; User VHDL File                     ; C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/timer.vhd                   ;         ;
+; resetDemandeChargement.vhd       ; yes             ; User VHDL File                     ; C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/resetDemandeChargement.vhd  ;         ;
+; gestionVariablePartagee.vhd      ; yes             ; User VHDL File                     ; C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionVariablePartagee.vhd ;         ;
+; gestionDialogue.vhd              ; yes             ; User VHDL File                     ; C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionDialogue.vhd         ;         ;
+; gestionBuffer.vhd                ; yes             ; User VHDL File                     ; C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd           ;         ;
+; Dvide_Freq.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/Dvide_Freq.bdf              ;         ;
+; detectionZero.vhd                ; yes             ; User VHDL File                     ; C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/detectionZero.vhd           ;         ;
+; decompteur_seule.vhd             ; yes             ; User VHDL File                     ; C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/decompteur_seule.vhd        ;         ;
+; decompteur.vhd                   ; yes             ; User VHDL File                     ; C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/decompteur.vhd              ;         ;
+; DCB.vhd                          ; yes             ; User VHDL File                     ; C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/DCB.vhd                     ;         ;
+; D7_D0_package.vhd                ; yes             ; User VHDL File                     ; C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/D7_D0_package.vhd           ;         ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_counter.tdf                                ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_constant.inc                               ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                                 ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                ;         ;
+; cmpconst.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cmpconst.inc                                   ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_compare.inc                                ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_counter.inc                                ;         ;
+; dffeea.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/dffeea.inc                                     ;         ;
+; alt_counter_stratix.inc          ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/alt_counter_stratix.inc                        ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                                 ;         ;
+; db/cntr_3ef.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/db/cntr_3ef.tdf             ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 152          ;
+;                                             ;              ;
+; Total combinational functions               ; 152          ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 59           ;
+;     -- 3 input functions                    ; 35           ;
+;     -- <=2 input functions                  ; 58           ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 114          ;
+;     -- arithmetic mode                      ; 38           ;
+;                                             ;              ;
+; Total registers                             ; 70           ;
+;     -- Dedicated logic registers            ; 70           ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 65           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[0]~input ;
+; Maximum fan-out                             ; 30           ;
+; Total fan-out                               ; 781          ;
+; Average fan-out                             ; 2.22         ;
++---------------------------------------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                          ;
++---------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                         ; Entity Name            ; Library Name ;
++---------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------+------------------------+--------------+
+; |top_DE10                                         ; 152 (1)             ; 70 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 65   ; 0            ; 0          ; |top_DE10                                                                   ; top_DE10               ; work         ;
+;    |DCB:DCB1|                                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|DCB:DCB1                                                          ; DCB                    ; work         ;
+;    |DCB:DCB2|                                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|DCB:DCB2                                                          ; DCB                    ; work         ;
+;    |DCB:DCB3|                                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|DCB:DCB3                                                          ; DCB                    ; work         ;
+;    |DCB:DCB4|                                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|DCB:DCB4                                                          ; DCB                    ; work         ;
+;    |DCB:DCB5|                                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|DCB:DCB5                                                          ; DCB                    ; work         ;
+;    |DCB:DCB6|                                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|DCB:DCB6                                                          ; DCB                    ; work         ;
+;    |Dvide_Freq:Divide|                            ; 24 (0)              ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|Dvide_Freq:Divide                                                 ; Dvide_Freq             ; work         ;
+;       |lpm_counter:inst|                          ; 24 (0)              ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|Dvide_Freq:Divide|lpm_counter:inst                                ; lpm_counter            ; work         ;
+;          |cntr_3ef:auto_generated|                ; 24 (24)             ; 24 (24)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|Dvide_Freq:Divide|lpm_counter:inst|cntr_3ef:auto_generated        ; cntr_3ef               ; work         ;
+;    |timer:timer1|                                 ; 85 (0)              ; 46 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|timer:timer1                                                      ; timer                  ; work         ;
+;       |decompteur:D1|                             ; 22 (0)              ; 17 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|timer:timer1|decompteur:D1                                        ; decompteur             ; work         ;
+;          |decompteur_seule:dec1|                  ; 17 (17)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|timer:timer1|decompteur:D1|decompteur_seule:dec1                  ; decompteur_seule       ; work         ;
+;          |detectionZero:zeroDetection|            ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|timer:timer1|decompteur:D1|detectionZero:zeroDetection            ; detectionZero          ; work         ;
+;          |resetDemandeChargement:resetChargement| ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|timer:timer1|decompteur:D1|resetDemandeChargement:resetChargement ; resetDemandeChargement ; work         ;
+;       |gestionBuffer:GB|                          ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|timer:timer1|gestionBuffer:GB                                     ; gestionBuffer          ; work         ;
+;       |gestionDialogue:GD|                        ; 45 (45)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|timer:timer1|gestionDialogue:GD                                   ; gestionDialogue        ; work         ;
+;       |gestionVarPartagee:varPartagee_charg_d|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|timer:timer1|gestionVarPartagee:varPartagee_charg_d               ; gestionVarPartagee     ; work         ;
+;       |gestionVarPartagee:varPartagee_sortie_out| ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_DE10|timer:timer1|gestionVarPartagee:varPartagee_sortie_out            ; gestionVarPartagee     ; work         ;
++---------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------+------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------+
+; State Machine - |top_DE10|timer:timer1|gestionDialogue:GD|RW_op            ;
++-----------------+-----------------+------------+-------------+-------------+
+; Name            ; RW_op.LeastMost ; RW_op.Most ; RW_op.Least ; RW_op.Latch ;
++-----------------+-----------------+------------+-------------+-------------+
+; RW_op.Latch     ; 0               ; 0          ; 0           ; 0           ;
+; RW_op.Least     ; 0               ; 0          ; 1           ; 1           ;
+; RW_op.Most      ; 0               ; 1          ; 0           ; 1           ;
+; RW_op.LeastMost ; 1               ; 0          ; 0           ; 1           ;
++-----------------+-----------------+------------+-------------+-------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------+
+; State Machine - |top_DE10|timer:timer1|gestionDialogue:GD|D_RW        ;
++----------------+----------------+-----------+------------+------------+
+; Name           ; D_RW.LeastMost ; D_RW.Most ; D_RW.Least ; D_RW.Latch ;
++----------------+----------------+-----------+------------+------------+
+; D_RW.Latch     ; 0              ; 0         ; 0          ; 0          ;
+; D_RW.Least     ; 0              ; 0         ; 1          ; 1          ;
+; D_RW.Most      ; 0              ; 1         ; 0          ; 1          ;
+; D_RW.LeastMost ; 1              ; 0         ; 0          ; 1          ;
++----------------+----------------+-----------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                    ;
++-----------------------------------------------------+-----------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                     ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------------------------+------------------------+
+; timer:timer1|gestionBuffer:GB|d_buf_out[0]          ; timer:timer1|gestionDialogue:GD|latch_d ; yes                    ;
+; timer:timer1|gestionBuffer:GB|d_buf_out[1]          ; timer:timer1|gestionDialogue:GD|latch_d ; yes                    ;
+; timer:timer1|gestionBuffer:GB|d_buf_out[2]          ; timer:timer1|gestionDialogue:GD|latch_d ; yes                    ;
+; timer:timer1|gestionBuffer:GB|d_buf_out[3]          ; timer:timer1|gestionDialogue:GD|latch_d ; yes                    ;
+; timer:timer1|gestionBuffer:GB|d_buf_out[4]          ; timer:timer1|gestionDialogue:GD|latch_d ; yes                    ;
+; timer:timer1|gestionBuffer:GB|d_buf_out[5]          ; timer:timer1|gestionDialogue:GD|latch_d ; yes                    ;
+; timer:timer1|gestionBuffer:GB|d_buf_out[6]          ; timer:timer1|gestionDialogue:GD|latch_d ; yes                    ;
+; timer:timer1|gestionBuffer:GB|d_buf_out[7]          ; timer:timer1|gestionDialogue:GD|latch_d ; yes                    ;
+; timer:timer1|gestionBuffer:GB|d_buf_out[8]          ; timer:timer1|gestionDialogue:GD|latch_d ; yes                    ;
+; timer:timer1|gestionBuffer:GB|d_buf_out[9]          ; timer:timer1|gestionDialogue:GD|latch_d ; yes                    ;
+; timer:timer1|gestionBuffer:GB|d_buf_out[10]         ; timer:timer1|gestionDialogue:GD|latch_d ; yes                    ;
+; timer:timer1|gestionBuffer:GB|d_buf_out[11]         ; timer:timer1|gestionDialogue:GD|latch_d ; yes                    ;
+; timer:timer1|gestionBuffer:GB|d_buf_out[12]         ; timer:timer1|gestionDialogue:GD|latch_d ; yes                    ;
+; timer:timer1|gestionBuffer:GB|d_buf_out[13]         ; timer:timer1|gestionDialogue:GD|latch_d ; yes                    ;
+; timer:timer1|gestionBuffer:GB|d_buf_out[14]         ; timer:timer1|gestionDialogue:GD|latch_d ; yes                    ;
+; timer:timer1|gestionBuffer:GB|d_buf_out[15]         ; timer:timer1|gestionDialogue:GD|latch_d ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                                         ;                        ;
++-----------------------------------------------------+-----------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                   ;
++------------------------------------------------------------+---+
+; Logic Cell Name                                            ;   ;
++------------------------------------------------------------+---+
+; timer:timer1|gestionVarPartagee:varPartagee_charg_d|Q~0    ;   ;
+; timer:timer1|gestionVarPartagee:varPartagee_sortie_out|Q~0 ;   ;
+; Number of logic cells representing combinational loops     ; 2 ;
++------------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                              ;
++---------------------------------------------------+-------------------------------------------------------------+
+; Register name                                     ; Reason for Removal                                          ;
++---------------------------------------------------+-------------------------------------------------------------+
+; timer:timer1|gestionDialogue:GD|d_buf_sortie[9]   ; Merged with timer:timer1|gestionDialogue:GD|d_buf_sortie[8] ;
+; timer:timer1|gestionDialogue:GD|d_buf_sortie[1]   ; Merged with timer:timer1|gestionDialogue:GD|d_buf_sortie[0] ;
+; timer:timer1|gestionDialogue:GD|d_buf_sortie[0,8] ; Stuck at GND due to stuck port data_in                      ;
+; timer:timer1|gestionDialogue:GD|RW_op.Latch       ; Lost fanout                                                 ;
+; timer:timer1|gestionDialogue:GD|RW_op.Least       ; Lost fanout                                                 ;
+; timer:timer1|gestionDialogue:GD|RW_op.Most        ; Lost fanout                                                 ;
+; timer:timer1|gestionDialogue:GD|D_RW.Least        ; Lost fanout                                                 ;
+; Total Number of Removed Registers = 8             ;                                                             ;
++---------------------------------------------------+-------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 70    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 2     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 39    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top_DE10|timer:timer1|gestionDialogue:GD|d_buf_sortie[11]              ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top_DE10|timer:timer1|gestionDialogue:GD|d_buf_sortie[7]               ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_DE10|timer:timer1|decompteur:D1|decompteur_seule:dec1|count_val[9] ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top_DE10|timer:timer1|decompteur:D1|decompteur_seule:dec1|count_val[7] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Dvide_Freq:Divide|LPM_COUNTER:inst ;
++------------------------+-------------------+------------------------------------+
+; Parameter Name         ; Value             ; Type                               ;
++------------------------+-------------------+------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY                       ;
+; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE                     ;
+; LPM_WIDTH              ; 24                ; Untyped                            ;
+; LPM_DIRECTION          ; DEFAULT           ; Untyped                            ;
+; LPM_MODULUS            ; 0                 ; Untyped                            ;
+; LPM_AVALUE             ; UNUSED            ; Untyped                            ;
+; LPM_SVALUE             ; UNUSED            ; Untyped                            ;
+; LPM_PORT_UPDOWN        ; PORT_CONNECTIVITY ; Untyped                            ;
+; DEVICE_FAMILY          ; MAX 10            ; Untyped                            ;
+; CARRY_CHAIN            ; MANUAL            ; Untyped                            ;
+; CARRY_CHAIN_LENGTH     ; 48                ; CARRY_CHAIN_LENGTH                 ;
+; NOT_GATE_PUSH_BACK     ; ON                ; NOT_GATE_PUSH_BACK                 ;
+; CARRY_CNT_EN           ; SMART             ; Untyped                            ;
+; LABWIDE_SCLR           ; ON                ; Untyped                            ;
+; USE_NEW_VERSION        ; TRUE              ; Untyped                            ;
+; CBXI_PARAMETER         ; cntr_3ef          ; Untyped                            ;
++------------------------+-------------------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "timer:timer1"  ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; d[1..0] ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 65                          ;
+; cycloneiii_ff         ; 70                          ;
+;     CLR               ; 2                           ;
+;     ENA               ; 23                          ;
+;     ENA SLD           ; 16                          ;
+;     plain             ; 29                          ;
+; cycloneiii_lcell_comb ; 159                         ;
+;     arith             ; 38                          ;
+;         2 data inputs ; 38                          ;
+;     normal            ; 121                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 17                          ;
+;         3 data inputs ; 35                          ;
+;         4 data inputs ; 59                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.30                        ;
+; Average LUT depth     ; 1.87                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sun May 12 15:01:53 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project_LTE -c Project_LTE
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file top_de10.vhd
+    Info (12022): Found design unit 1: top_DE10-arch_top File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/top_DE10.vhd Line: 13
+    Info (12023): Found entity 1: top_DE10 File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/top_DE10.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
+    Info (12022): Found design unit 1: timer-behavioural File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/timer.vhd Line: 13
+    Info (12023): Found entity 1: timer File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/timer.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file resetdemandechargement.vhd
+    Info (12022): Found design unit 1: resetDemandeChargement-behaviour File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/resetDemandeChargement.vhd Line: 10
+    Info (12023): Found entity 1: resetDemandeChargement File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/resetDemandeChargement.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file gestionvariablepartagee.vhd
+    Info (12022): Found design unit 1: gestionVarPartagee-behaviour File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionVariablePartagee.vhd Line: 10
+    Info (12023): Found entity 1: gestionVarPartagee File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionVariablePartagee.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file gestiondialogue.vhd
+    Info (12022): Found design unit 1: gestionDialogue-behavioural File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionDialogue.vhd Line: 16
+    Info (12023): Found entity 1: gestionDialogue File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionDialogue.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file gestionbuffer.vhd
+    Info (12022): Found design unit 1: gestionBuffer-behavior File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 10
+    Info (12023): Found entity 1: gestionBuffer File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file dvide_freq.bdf
+    Info (12023): Found entity 1: Dvide_Freq
+Info (12021): Found 2 design units, including 1 entities, in source file detectionzero.vhd
+    Info (12022): Found design unit 1: detectionZero-behaviour File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/detectionZero.vhd Line: 9
+    Info (12023): Found entity 1: detectionZero File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/detectionZero.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decompteur_seule.vhd
+    Info (12022): Found design unit 1: decompteur_seule-behaviour File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/decompteur_seule.vhd Line: 13
+    Info (12023): Found entity 1: decompteur_seule File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/decompteur_seule.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file decompteur.vhd
+    Info (12022): Found design unit 1: decompteur-behaviour File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/decompteur.vhd Line: 14
+    Info (12023): Found entity 1: decompteur File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/decompteur.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file dcb.vhd
+    Info (12022): Found design unit 1: DCB-arch_DCB File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/DCB.vhd Line: 13
+    Info (12023): Found entity 1: DCB File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/DCB.vhd Line: 8
+Info (12021): Found 2 design units, including 0 entities, in source file d7_d0_package.vhd
+    Info (12022): Found design unit 1: D7_D0 File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/D7_D0_package.vhd Line: 5
+    Info (12022): Found design unit 2: D7_D0-body File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/D7_D0_package.vhd Line: 10
+Info (12127): Elaborating entity "top_DE10" for the top level hierarchy
+Info (12128): Elaborating entity "Dvide_Freq" for hierarchy "Dvide_Freq:Divide" File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/top_DE10.vhd Line: 58
+Warning (275080): Converted elements in bus name "out_cpt" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "out_cpt[23..0]" to "out_cpt23..0"
+Info (12128): Elaborating entity "LPM_COUNTER" for hierarchy "Dvide_Freq:Divide|LPM_COUNTER:inst"
+Info (12130): Elaborated megafunction instantiation "Dvide_Freq:Divide|LPM_COUNTER:inst"
+Info (12133): Instantiated megafunction "Dvide_Freq:Divide|LPM_COUNTER:inst" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTH" = "24"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_3ef.tdf
+    Info (12023): Found entity 1: cntr_3ef File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/db/cntr_3ef.tdf Line: 25
+Info (12128): Elaborating entity "cntr_3ef" for hierarchy "Dvide_Freq:Divide|LPM_COUNTER:inst|cntr_3ef:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 258
+Info (12128): Elaborating entity "DCB" for hierarchy "DCB:DCB1" File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/top_DE10.vhd Line: 62
+Info (12128): Elaborating entity "timer" for hierarchy "timer:timer1" File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/top_DE10.vhd Line: 71
+Info (12128): Elaborating entity "gestionDialogue" for hierarchy "timer:timer1|gestionDialogue:GD" File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/timer.vhd Line: 59
+Warning (10492): VHDL Process Statement warning at gestionDialogue.vhd(25): signal "charg_d" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionDialogue.vhd Line: 25
+Warning (10492): VHDL Process Statement warning at gestionDialogue.vhd(25): signal "sortie" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionDialogue.vhd Line: 25
+Warning (10492): VHDL Process Statement warning at gestionDialogue.vhd(27): signal "charg_d" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionDialogue.vhd Line: 27
+Warning (10492): VHDL Process Statement warning at gestionDialogue.vhd(27): signal "sortie" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionDialogue.vhd Line: 27
+Warning (10492): VHDL Process Statement warning at gestionDialogue.vhd(29): signal "charg_d" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionDialogue.vhd Line: 29
+Warning (10492): VHDL Process Statement warning at gestionDialogue.vhd(29): signal "sortie" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionDialogue.vhd Line: 29
+Info (12128): Elaborating entity "gestionVarPartagee" for hierarchy "timer:timer1|gestionVarPartagee:varPartagee_charg_d" File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/timer.vhd Line: 61
+Info (12128): Elaborating entity "gestionBuffer" for hierarchy "timer:timer1|gestionBuffer:GB" File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/timer.vhd Line: 65
+Warning (10631): VHDL Process Statement warning at gestionBuffer.vhd(12): inferring latch(es) for signal or variable "d_buf_out", which holds its previous value in one or more paths through the process File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (10041): Inferred latch for "d_buf_out[0]" at gestionBuffer.vhd(12) File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (10041): Inferred latch for "d_buf_out[1]" at gestionBuffer.vhd(12) File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (10041): Inferred latch for "d_buf_out[2]" at gestionBuffer.vhd(12) File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (10041): Inferred latch for "d_buf_out[3]" at gestionBuffer.vhd(12) File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (10041): Inferred latch for "d_buf_out[4]" at gestionBuffer.vhd(12) File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (10041): Inferred latch for "d_buf_out[5]" at gestionBuffer.vhd(12) File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (10041): Inferred latch for "d_buf_out[6]" at gestionBuffer.vhd(12) File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (10041): Inferred latch for "d_buf_out[7]" at gestionBuffer.vhd(12) File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (10041): Inferred latch for "d_buf_out[8]" at gestionBuffer.vhd(12) File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (10041): Inferred latch for "d_buf_out[9]" at gestionBuffer.vhd(12) File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (10041): Inferred latch for "d_buf_out[10]" at gestionBuffer.vhd(12) File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (10041): Inferred latch for "d_buf_out[11]" at gestionBuffer.vhd(12) File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (10041): Inferred latch for "d_buf_out[12]" at gestionBuffer.vhd(12) File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (10041): Inferred latch for "d_buf_out[13]" at gestionBuffer.vhd(12) File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (10041): Inferred latch for "d_buf_out[14]" at gestionBuffer.vhd(12) File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (10041): Inferred latch for "d_buf_out[15]" at gestionBuffer.vhd(12) File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/gestionBuffer.vhd Line: 12
+Info (12128): Elaborating entity "decompteur" for hierarchy "timer:timer1|decompteur:D1" File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/timer.vhd Line: 66
+Info (12128): Elaborating entity "detectionZero" for hierarchy "timer:timer1|decompteur:D1|detectionZero:zeroDetection" File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/decompteur.vhd Line: 35
+Info (12128): Elaborating entity "resetDemandeChargement" for hierarchy "timer:timer1|decompteur:D1|resetDemandeChargement:resetChargement" File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/decompteur.vhd Line: 36
+Info (12128): Elaborating entity "decompteur_seule" for hierarchy "timer:timer1|decompteur:D1|decompteur_seule:dec1" File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/decompteur.vhd Line: 37
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LED[5]" is stuck at GND File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/top_DE10.vhd Line: 8
+    Warning (13410): Pin "LED[6]" is stuck at GND File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/top_DE10.vhd Line: 8
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Warning (20013): Ignored 24 assignments for entity "DE10_LITE" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE10_LITE -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE10_LITE -section_id Top was ignored
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/fabio/Desktop/S8/LogiqueProgrammable/Projeto/[8] LP_Projet_Carte/top_DE10.vhd Line: 7
+Info (21057): Implemented 218 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21061): Implemented 153 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 40 warnings
+    Info: Peak virtual memory: 664 megabytes
+    Info: Processing ended: Sun May 12 15:02:31 2019
+    Info: Elapsed time: 00:00:38
+    Info: Total CPU time (on all processors): 00:00:39
+
+

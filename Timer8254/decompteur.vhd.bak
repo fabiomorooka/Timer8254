@@ -1,0 +1,38 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+ENTITY decompteur IS
+PORT(	charg_d : IN std_logic; 						-- Demande de chargement
+    	d_buf_in : IN std_logic_vector(15 DOWNTO 0); 				-- Valeur de chargement
+    	gate : IN std_logic;							-- Decompte ou faire rien	
+    	clk : IN std_logic;							-- Signal clock
+    	count_val : BUFFER std_logic_vector(15 DOWNTO 0) := "0000000000000110"; -- Valeur de la sortie
+    	set_zero_signal : OUT std_logic:='0';  					-- Zero au debout
+    	resetCharge_d : OUT std_logic := '0'); 					-- Zero au debout
+END decompteur;
+
+ARCHITECTURE behaviour OF decompteur IS
+--component declarations
+component detectionZero is
+PORT(	sortie_out : OUT std_logic := '0'; 		-- Signal de la sortie defaut a 0 
+	count_val : IN std_logic_vector(15 DOWNTO 0)); 	-- Valeur de la sortie
+END component;
+
+component resetDemandeChargement is
+PORT(	clk : IN std_logic;
+    	charg_d : IN std_logic;
+	resetCharge_d: OUT std_logic := '0'); 
+END component;
+
+component decompteur_seule is
+PORT(	charg_d : IN std_logic; 						 -- Demande de chargement
+    	d_buf_in : IN std_logic_vector(15 DOWNTO 0); 				 -- Valeur de chargement
+    	gate : IN std_logic;							 -- Decompte ou faire rien	
+    	clk : IN std_logic;							 -- Signal clock
+    	count_val : BUFFER std_logic_vector(15 DOWNTO 0) := "0000000000000110"); -- Valeur de la sortie
+END component;
+	BEGIN
+		zeroDetection : detectionZero PORT MAP(set_zero_signal, count_val);
+		resetChargement : resetDemandeChargement PORT MAP(clk, charg_d, resetCharge_d);
+		dec1: decompteur_seule PORT MAP(charg_d, d_buf_in, gate, clk, count_val);
+ END behaviour;

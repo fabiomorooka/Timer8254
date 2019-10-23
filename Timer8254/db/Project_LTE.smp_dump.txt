@@ -1,0 +1,14 @@
+
+State Machine - |top_DE10|timer:timer1|gestionDialogue:GD|RW_op
+Name RW_op.LeastMost RW_op.Most RW_op.Least RW_op.Latch 
+RW_op.Latch 0 0 0 0 
+RW_op.Least 0 0 1 1 
+RW_op.Most 0 1 0 1 
+RW_op.LeastMost 1 0 0 1 
+
+State Machine - |top_DE10|timer:timer1|gestionDialogue:GD|D_RW
+Name D_RW.LeastMost D_RW.Most D_RW.Least D_RW.Latch 
+D_RW.Latch 0 0 0 0 
+D_RW.Least 0 0 1 1 
+D_RW.Most 0 1 0 1 
+D_RW.LeastMost 1 0 0 1 
